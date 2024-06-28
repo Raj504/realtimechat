@@ -30,7 +30,7 @@
                 @foreach ($lastFiveMessages as $message)
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <span>{{ $message->content }}</span>
-                        <span class="badge badge-primary badge-pill">{{ $message->created_at->format('d M Y, h:i A') }}</span>
+                        {{-- <span class="badge badge-primary badge-pill">{{ $message->created_at->format('d M Y, h:i A') }}</span> --}}
                     </li>
                 @endforeach
             </ul>
