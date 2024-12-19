@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\ChatGroup;
+use App\Models\Message;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -48,8 +50,13 @@ class User extends Authenticatable
     protected $dates = [
         'last_login_at',
     ];
-    public function messages()
-    {
+
+
+    public function chatGroups() {
+        return $this->belongsToMany(ChatGroup::class);
+    }
+
+    public function messages() {
         return $this->hasMany(Message::class);
     }
 }
